@@ -55,7 +55,6 @@
 .progress-container {
   width: 100%;
   height: 6px;
-  /* MODIF : On utilise la variable border pour que le fond de la barre soit sombre en mode dark */
   background-color: var(--border); 
   border-radius: 10px;
   margin: 10px 0;

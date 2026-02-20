@@ -5,7 +5,7 @@
   gap: 12px;
 }
 
-/* Le bouton Thème (Cercle discret) */
+
 .theme-btn-round {
   background: var(--card);
   border: 1px solid var(--border);
@@ -57,7 +57,7 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Le sélecteur de filtre (Style pilule légère) */
+/* Le sélecteur de filtre  */
 .filter-pill {
   display: flex;
   align-items: center;

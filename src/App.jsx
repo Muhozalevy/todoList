@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, } from 'react-router'; 
+import { Routes, Route } from 'react-router-dom' 
 import Acceuil from './projet1/pages/Acceuil'
 import Detail from './projet1/pages/Details'
 import './App.css'
@@ -15,5 +15,4 @@ function App() {
  </div>
   )
 }
-
 export default App
