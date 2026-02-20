@@ -1,0 +1,127 @@
+/* 1. LES VARIABLES (Harmonisées pour que le nom soit identique) */
+:root {
+  --primary: #6366f1;
+  --bg: #f3f7f6;
+  --card: #ffffff;
+  --text: #2d3436;
+  --border: #dcdde1;
+}
+
+[data-theme='dark'] {
+  --bg: #0f172a;      /* Ton ancienne couleur sombre */
+  --card: #1e293b;    /* Ton ancienne --card-bg */
+  --text: #f1f5f9;    /* Ton ancienne --text-primary */
+  --border: #334155;  /* Ton ancienne --border sombre */
+  --primary: #818cf8; /* Un violet plus lisible en sombre */
+}
+
+/* 2. APPLICATION SUR LE BODY (Crucial pour le fond total) */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  min-height: 100vh; /* Force le fond sur toute la hauteur */
+}
+
+/* On dit à tous les textes d'écouter var(--text) */
+h1, h2, h3, p, span, input, textarea, label {
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+/* 3. TES STYLES DE MISE EN PAGE (Gardés tels quels) */
+.main-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.search-pill {
+  background: var(--primary);
+  border-radius: 30px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.search-pill input {
+  background: none;
+  border: none;
+  color: white !important; 
+  margin-left: 10px;
+  outline: none;
+}
+
+.task-row {
+  background: var(--card); /* Utilise maintenant la variable qui change */
+  padding: 15px 25px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border: 1px solid var(--border); /* Ajout d'une bordure qui s'adapte */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.completed-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* 4. TES BARRES DE PROGRESSION (Gardées telles quelles) */
+.progress-container {
+  margin-bottom: 25px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: var(--border); /* Utilise la bordure qui devient sombre en dark */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 10px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* À mettre dans le CSS du composant Parent (ex: App.css ou ContactList.css) */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}

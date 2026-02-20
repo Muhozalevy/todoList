@@ -1,0 +1,94 @@
+/* Container principal des contrôles en haut à droite */
+.top-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Le bouton Thème (Cercle discret) */
+.theme-btn-round {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+}
+
+.theme-btn-round:hover {
+  background: var(--border);
+  transform: scale(1.05);
+}
+
+/* La barre de recherche style "Pilule" (Violette sur ton image) */
+.search-pill {
+  background: var(--primary); /* Le violet #6366f1 */
+  border-radius: 30px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+}
+
+.search-icon {
+  color: white;
+  font-size: 20px;
+}
+
+.search-pill input {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.search-pill input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Le sélecteur de filtre (Style pilule légère) */
+.filter-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 8px 15px;
+  border-radius: 30px;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.filter-pill select {
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Responsive : pour mobile, on empile les éléments */
+@media (max-width: 600px) {
+  .top-controls {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .search-pill {
+    min-width: unset;
+  }
+}

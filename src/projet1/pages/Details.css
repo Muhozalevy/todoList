@@ -1,0 +1,111 @@
+/* Container de la page de modification */
+/* À ajouter pour adoucir le passage clair/sombre */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-card,
+input,
+textarea {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.main-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--text);
+}
+
+/* La carte centrale de modification */
+.edit-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid var(--border);
+}
+
+/* Style des champs de saisie */
+.edit-card input,
+.edit-card textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au clic sur les champs */
+.edit-card input:focus,
+.edit-card textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.edit-card textarea {
+  min-height: 150px;
+  resize: vertical;
+  /* Permet d'agrandir seulement en hauteur */
+}
+
+/* Zone des boutons en bas */
+.details-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Bouton Enregistrer (Violet) */
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.primary-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Bouton Annuler (Gris/Transparent) */
+.secondary-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.secondary-btn:hover {
+  background: var(--bg);
+  border-color: var(--text);
+}
+
+/* Adaptation pour le mode sombre automatique */
+[data-theme='dark'] .edit-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
